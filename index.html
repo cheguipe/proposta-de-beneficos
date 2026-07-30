@@ -126,14 +126,14 @@
     box-shadow: var(--sombra);
   }
   .prop-hero img{ width:100%; display:block; max-height:120px; object-fit:cover; }
-  .prop-hero .prop-hero-text{
+  .prop-hero-text{
     display:flex; flex-direction:column;
     align-items:center; justify-content:center; text-align:center;
-    color: var(--tinta); background:#fff;
-    padding: 16px 16px 10px;
+    color:#fff; background: var(--magenta-escuro);
+    width:100%; height:3cm; padding:0 16px;
   }
-  .prop-hero .prop-hero-text .eyebrow{ font-size:11px; letter-spacing:.22em; text-transform:uppercase; font-weight:700; color:var(--rosa);}
-  .prop-hero .prop-hero-text h2{ margin:.15em 0 0; font-size:clamp(20px,3.4vw,28px); font-weight:800; color:var(--tinta); }
+  .prop-hero-text .eyebrow{ font-size:11px; letter-spacing:.22em; text-transform:uppercase; font-weight:700; color:#fff; opacity:.85;}
+  .prop-hero-text h2{ margin:.15em 0 0; font-size:clamp(20px,3.4vw,28px); font-weight:800; color:#fff; }
 
   .prop-body{ padding: 10px clamp(16px,4vw,44px) 26px; }
 
@@ -165,6 +165,12 @@
     margin:0 0 10px; font-size:14px; letter-spacing:.02em; color:var(--magenta-escuro);
     display:flex; align-items:center; gap:8px;
   }
+  .cartao-beneficio h3 .bullet{
+    width:26px; height:26px; min-width:26px; border-radius:50%;
+    background: linear-gradient(135deg, var(--roxo), var(--magenta));
+    color:#fff; display:flex; align-items:center; justify-content:center;
+  }
+  .cartao-beneficio h3 .bullet svg{ width:15px; height:15px; }
   .cartao-beneficio h3 .selo{
     font-size:9px; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
     background: var(--magenta); color:#fff; padding:3px 7px; border-radius:20px;
@@ -199,7 +205,9 @@
   .mini .ico{
     width:34px;height:34px;border-radius:50%; margin:0 auto 8px;
     background: linear-gradient(135deg, var(--roxo), var(--magenta));
+    display:flex; align-items:center; justify-content:center; color:#fff;
   }
+  .mini .ico svg{ width:19px; height:19px; }
   .mini strong{ display:block; color:var(--tinta); font-size:13.5px; margin-bottom:2px;}
 
   .integra-logo{ text-align:center; margin: 4px 0 26px; }
@@ -224,10 +232,10 @@
     }
     .top-logo, .hero, main > section.painel, footer{ display:none !important; }
 
-    .prop-hero img{ max-height:70px; }
-    .prop-hero .prop-hero-text{ padding:8px 10px 4px; }
-    .prop-hero .prop-hero-text .eyebrow{ font-size:9px; }
-    .prop-hero .prop-hero-text h2{ font-size:19px; }
+    .prop-hero img{ max-height:55px; }
+    .prop-hero-text{ height:2cm; padding:0 10px; }
+    .prop-hero-text .eyebrow{ font-size:9px; }
+    .prop-hero-text h2{ font-size:19px; }
 
     .prop-body{ padding:6px 14px 10px; }
     .prop-nome{ margin:2px 0 0; font-size:11px; }
@@ -241,7 +249,9 @@
 
     .obrigatorios{ gap:8px; margin-bottom:8px; }
     .cartao-beneficio{ padding:8px 10px; }
-    .cartao-beneficio h3{ font-size:10.5px; margin-bottom:4px; }
+    .cartao-beneficio h3{ font-size:10.5px; margin-bottom:4px; gap:5px; }
+    .cartao-beneficio h3 .bullet{ width:16px; height:16px; min-width:16px; }
+    .cartao-beneficio h3 .bullet svg{ width:9px; height:9px; }
     .cartao-beneficio h3 .selo{ font-size:7.5px; padding:2px 5px; }
     .cartao-beneficio ul, .cartao-beneficio p{ font-size:9px; }
     .cartao-beneficio ul li{ margin-bottom:1px; }
@@ -255,6 +265,7 @@
     .mais-grid{ gap:6px; margin-bottom:10px; }
     .mini{ padding:6px 6px; font-size:8.5px; }
     .mini .ico{ width:16px; height:16px; margin-bottom:3px; }
+    .mini .ico svg{ width:9px; height:9px; }
     .mini strong{ font-size:9px; }
 
     .assinatura{ padding-top:8px; font-size:8.5px; }
@@ -348,7 +359,7 @@
 
           <div class="obrigatorios">
             <div class="cartao-beneficio">
-              <h3>Plano de Saúde <span class="selo">Obrigatório</span></h3>
+              <h3><span class="bullet"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><path d="M46 30.1 46 34.1C46.7 34.1 47.3 34 48 34 48.7 34 49.3 34 50 34.1L50 30.1C53.9 30.3 57.6 31.1 61 32.4L59.5 36C60.8 36.5 62 37 63.2 37.6L64.7 33.9C66.6 34.8 68.3 35.9 70 37.1L74.3 32.8C67 27.3 57.9 24 48 24 23.7 24 4 43.7 4 68L4 72 10 72 10 68C10 63.9 10.7 59.9 11.9 56.2L15.6 57.7C16 56.4 16.5 55.2 17 54L13.3 52.5C14.8 49.1 16.9 45.9 19.3 43.2L22.1 46C23 45 23.9 44 24.9 43.1L22.1 40.3C24.8 37.8 27.9 35.6 31.3 33.9L32.8 37.6C34 37 35.2 36.5 36.5 36L35 32.3C38.4 31 42.1 30.3 46 30.1Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/><path d="M84.1 42.8 79.8 47.1C80.9 48.8 81.9 50.6 82.7 52.4L79 54C79.5 55.2 80 56.5 80.4 57.7L84.1 56.2C85.3 59.9 86 63.9 86 68L86 72 92 72 92 68C92 58.6 89.1 50 84.1 42.8Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/><path d="M45.2 66.2C45 66.3 44.9 66.5 44.7 66.7 43.3 68.4 43.5 70.9 45.2 72.4 46.9 73.8 49.4 73.6 50.9 71.9L82 35 45.2 66.2Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/></svg></span>Plano de Saúde <span class="selo">Obrigatório</span></h3>
               <ul>
                 <li>Amil 200 QC GR = 355 PTS</li>
                 <li>Amil 200 QP GR = 376 PTS</li>
@@ -359,19 +370,19 @@
               <p>(100% para colaboradores). É possível incluir dependentes — usando parte da sua pontuação total ou por desconto integral em folha. Todos os planos têm coparticipação de 20%, com valor limitador, para colaborador e dependentes.</p>
             </div>
             <div class="cartao-beneficio">
-              <h3>Vale-Refeição + Vale-Alimentação <span class="selo">Obrigatório</span></h3>
+              <h3><span class="bullet"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><path d="M78.6 31.4C91.6 16.8 86.9 11.7 86.9 11.7 85.3 10.1 82.8 10.1 81.2 11.7L43.3 49.6 10.3 80.4C8 82.7 8 86.5 10.3 88.9 12.6 91.2 16.4 91.2 18.8 88.9L48.9 55.9C50.4 56.6 54.4 58.6 55.6 57.3L78.6 31.4Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/><path d="M88.8 80.4 62.5 55.5 58.5 60C57.8 60.7 56.6 61.6 54.7 61.7L80.4 88.9C82.8 91.2 86.6 91.2 88.9 88.9 91.1 86.5 91.1 82.7 88.8 80.4Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/><path d="M35.9 47.6C35.9 47.6 37.7 47.2 39.7 47.5L40.5 46.7 47.4 39.8C47.1 37.9 47.5 36 47.5 36 48.2 31.7 46.5 26.7 41.4 21.6 33 13.2 21 5.4 21 5.4L19.2 7.2 39.4 27.4C40 28 40 28.9 39.4 29.5 38.8 30.1 37.9 30.1 37.3 29.5L17.1 9.3 14.3 12.1 34.5 32.3C35.1 32.9 35.1 33.8 34.5 34.4 33.9 35 33 35 32.4 34.4L12.2 14.2 9.4 17 29.6 37.2C30.2 37.8 30.2 38.7 29.6 39.3 29 39.9 28.1 39.9 27.5 39.3L7.2 19.2 5.4 21C5.4 21 13.9 33.8 21.5 41.5 26.6 46.6 31.6 48.3 35.9 47.6Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/></svg></span>Vale-Refeição + Vale-Alimentação <span class="selo">Obrigatório</span></h3>
               <p>Benefício obrigatório, incluído automaticamente na sua composição de pontos.</p>
               <span class="destaque" id="p-minvr">—</span>
             </div>
             <div class="cartao-beneficio opcional">
-              <h3>Plano Odontológico <span class="selo">Opcional</span></h3>
+              <h3><span class="bullet"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><path d="M78 24C78 15.2 73.7 8 65 8 56.3 8 56.6 12 48 12 39.4 12 39.7 8 31 8 22.3 8 18 15.2 18 24 18 32.8 25 41.5 25 49 25 56.1 24 62.1 24 67 24 71.9 23.9 88 31 88 38.1 88 38 73.4 38 67 38 60.6 38.8 51 48 51 57.2 51 58 60.6 58 67 58 73.4 57.9 88 65 88 72.1 88 72 71.9 72 67 72 62.1 71 56.1 71 49 71 41.5 78 32.8 78 24Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/></svg></span>Plano Odontológico <span class="selo">Opcional</span></h3>
               <ul>
                 <li>Dental 200 DOC = 11 PTS</li>
                 <li>E200 PROT = 15 PTS</li>
               </ul>
             </div>
             <div class="cartao-beneficio opcional">
-              <h3>Pontos em Multibenefícios <span class="selo">Opcional</span></h3>
+              <h3><span class="bullet"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><path d="M48.28 80C52.6648 76.5383 56.8483 72.8289 60.81 68.89 66.5529 63.4186 71.6312 57.2897 75.94 50.63 79.94 44.19 83.76 35.83 81.13 28.19 79 21.87 73.09 16.5 66.3 15.85 57.72 15 51.51 22.26 48 29.21 44.79 22.85 39.48 16.29 31.81 15.81 25 15.39 18.66 20.18 15.73 26.13 12.06 33.6 15.05 42 18.91 48.71 22.91 55.71 28.23 61.86 33.85 67.55 38.2803 72.0826 43.0074 76.3153 48 80.22ZM32 46 35 37 36.78 31.65C37.24 30.26 37.95 28.4 39.87 29.2 41.03 29.69 41.1 30.89 41.3 31.94L42.13 36.37 44.53 49.17 46.12 57.67 51.92 42.33 53.2 38.95C53.57 37.95 53.95 36.95 55.2 36.84 56.79 36.68 57.26 38.04 57.61 39.24L58.84 43.46 61.28 51.85 63.69 49.2C64.4609 48.1913 65.3283 47.2602 66.28 46.42 67.28 45.72 69.13 46.04 70.28 46.04L74 46.04C73.26 47.37 72.44 48.71 71.55 50.04L68.3 50.04C66.17 52.39 64.13 54.89 61.87 57.12 61.1611 57.9671 59.8998 58.0792 59.0527 57.3703 58.8861 57.2309 58.7433 57.0653 58.63 56.88 58.4127 56.4499 58.2546 55.9925 58.16 55.52L56.49 49.81 55.13 45.13C52.58 51.86 50.13 58.6 47.5 65.3 47.3529 65.8458 47.0338 66.3298 46.59 66.68 45.6795 67.3054 44.4345 67.0743 43.8091 66.1639 43.6493 65.9313 43.5406 65.6676 43.49 65.39 43.26 64.47 43.14 63.51 42.96 62.59L40.43 49.09 38.54 39 35.72 47.47C35.29 48.73 34.95 49.96 33.33 50.04 31.86 50.11 30.38 50.04 28.92 50.04L24.42 50.04C23.54 48.71 22.71 47.37 21.97 46.04Z" id="punched_out" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/></svg></span>Pontos em Multibenefícios <span class="selo">Opcional</span></h3>
               <p>Combustível, Cultura, Educação, Saúde, Mobilidade, etc.</p>
             </div>
           </div>
@@ -383,15 +394,15 @@
 
           <p class="mais-titulo">E mais!</p>
           <div class="mais-grid">
-            <div class="mini"><div class="ico"></div><strong>Seguro de vida</strong></div>
-            <div class="mini"><div class="ico"></div><strong>Convênio farmácia</strong></div>
-            <div class="mini"><div class="ico"></div><strong>Auxílio creche</strong></div>
-            <div class="mini"><div class="ico"></div><strong>Auxílio crianças com deficiências</strong></div>
-            <div class="mini"><div class="ico"></div><strong>TotalPass</strong>Convênio academia</div>
-            <div class="mini"><div class="ico"></div><strong>PLR</strong></div>
-            <div class="mini"><div class="ico"></div><strong>Day off</strong>no mês do seu aniversário</div>
-            <div class="mini"><div class="ico"></div><strong>Trabalho híbrido</strong>ou remoto!</div>
-            <div class="mini" style="grid-column: span 2;"><div class="ico"></div><strong>Integra</strong>Auxílio médico, coaching nutricional, coaching esportivo e Mamãe Enger.</div>
+            <div class="mini"><div class="ico"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><path d="M84 25 64 25 64 18C64 14.134 60.866 11 57 11L39 11C35.134 11 32 14.134 32 18L32 25 12 25C9.79086 25 8 26.7909 8 29L8 77C8 79.2091 9.79086 81 12 81L84 81C86.2091 81 88 79.2091 88 77L88 29C88 26.7909 86.2091 25 84 25ZM38 18C37.9657 17.482 38.3579 17.0343 38.8759 17 38.9172 16.9973 38.9587 16.9973 39 17L57 17C57.518 16.9657 57.9657 17.3579 58 17.8759 58.0027 17.9172 58.0027 17.9587 58 18L58 25 38 25ZM63 57 59 64 52 60 52 68 44 68 44 59.93 37 63.93 33 57 40 53 33 49 37 42 44 46 44 38 52 38 52 46.07 59 42.07 63 49 56 53Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/></svg></div><strong>Seguro de vida</strong></div>
+            <div class="mini"><div class="ico"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><path d="M48 16C30.3 16 16 30.3 16 48 16 65.7 30.3 80 48 80 65.7 80 80 65.7 80 48 80 30.3 65.7 16 48 16ZM48 86C27 86 10 69 10 48 10 27 27 10 48 10 69 10 86 27 86 48 86 69 69 86 48 86Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/><path d="M68 40 56 40 56 28C56 25.8 54.2 24 52 24L44 24C41.8 24 40 25.8 40 28L40 40 28 40C25.8 40 24 41.8 24 44L24 52C24 54.2 25.8 56 28 56L40 56 40 68C40 70.2 41.8 72 44 72L52 72C54.2 72 56 70.2 56 68L56 56 68 56C70.2 56 72 54.2 72 52L72 44C72 41.8 70.2 40 68 40Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/></svg></div><strong>Convênio farmácia</strong></div>
+            <div class="mini"><div class="ico"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><circle cx="48" cy="20.5" r="12.5" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/><path d="M57 62.5C57 62.6 57 62.7 57 62.8 53.5 63.1 50.9 66 51 69.5 51 70.5 51.3 71.5 51.8 72.3 50.7 72.7 49.3 72.9 47.8 72.9 46.2 72.9 44.9 72.7 43.9 72.3 45.4 70.1 45.4 67.1 43.8 64.8 42.6 63.2 40.9 62.2 39 62L39 60 57 60 57 62.5ZM76.2 44.2 59 35.2C58.6 35.1 58.2 35 57.8 35L39 35C38.5 35 38.1 35.1 37.6 35.2L19.6 45.2C17.5 46 16.5 48.3 17.2 50.3 17.8 52 19.4 53 21 53 21.5 53 21.9 52.9 22.4 52.8L35 46.2C35 46.2 35 62.7 35 63 34.8 63.1 26.8 68.7 26.8 68.7 25.1 69.9 24.6 72.3 25.7 74.1L32.7 85.1C33.9 87 36.4 87.5 38.2 86.3 40 85.1 40.6 82.6 39.4 80.8L36 75.3 38.2 75.3C38.9 75.3 39.6 75.2 40.3 75 42.1 76.2 44.5 76.9 47.7 76.9 50.7 76.9 53.1 76.2 55 75.2 55.8 75.6 56.8 75.7 57.8 75.7L59.6 75.6 56 80.6C54.7 82.4 55.1 84.9 56.9 86.2 58.7 87.5 61.2 87.1 62.5 85.3L70.5 74.3C70.6 74.2 70.7 74.1 70.7 73.9 71.8 72 71.1 69.5 69.2 68.4L61 63.8C61 63.4 61 45.8 61 45.8L73.8 51.9C74.2 52 74.6 52.1 75 52.1 76.7 52.1 78.3 51 78.8 49.3 79.5 47.1 78.3 44.9 76.2 44.2Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/></svg></div><strong>Auxílio creche</strong></div>
+            <div class="mini"><div class="ico"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><circle cx="75.5" cy="34.5" r="12.5" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/><path d="M18 59C18 60.6 18.6 62 19.6 63.1 17.2 61.9 16 59.8 16 56 16 48.6 22.8 47.6 32 47L32 60.8 30 57C28.7 54.4 26.8 53 24 53 20.7 53 18 55.7 18 59ZM9 71C9 73.2 10.8 75 13 75L33 75C34.5 75 36 74.1 36.6 72.7 37.3 71.3 36.9 69.7 36.1 68.5L34.7 66 33.9 64.5 58.2 57.8 59.1 62.7C59.2 63.5 59.6 64.3 60.2 64.8L69.2 73.8C70 74.6 71 75 72 75 73 75 74 74.6 74.8 73.8 76.4 72.2 76.4 69.7 74.8 68.1L66.7 60 63.9 44.2C63.6 42.3 61.9 40.9 60 40.9L32 42.9C24.2 43.4 12 44.2 12 55.9 12 62.2 14.8 65.3 18.7 66.9L13 66.9C10.8 67 9 68.8 9 71Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/></svg></div><strong>Auxílio crianças com deficiências</strong></div>
+            <div class="mini"><div class="ico"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g><path d="M4 48C4 50.2 5.8 52 8 52L8 44C5.8 44 4 45.8 4 48Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/><path d="M88 44 88 52C90.2 52 92 50.2 92 48 92 45.8 90.2 44 88 44Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/><path d="M15 33 14 33C11.8 33 10 34.8 10 37L10 59C10 61.2 11.8 63 14 63L15 63C17.2 63 19 61.2 19 59L19 37C19 34.8 17.2 33 15 33Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/><path d="M82 33 81 33C78.8 33 77 34.8 77 37L77 59C77 61.2 78.8 63 81 63L82 63C84.2 63 86 61.2 86 59L86 37C86 34.8 84.2 33 82 33Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/><path d="M71 24 69 24C66.8 24 65 25.8 65 28L65 42 31 42 31 28C31 25.8 29.2 24 27 24L25 24C22.8 24 21 25.8 21 28L21 68C21 70.2 22.8 72 25 72L27 72C29.2 72 31 70.2 31 68L31 54 65 54 65 68C65 70.2 66.8 72 69 72L71 72C73.2 72 75 70.2 75 68L75 28C75 25.8 73.2 24 71 24Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/></g></svg></div><strong>TotalPass</strong>Convênio academia</div>
+            <div class="mini"><div class="ico"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><path d="M20 13 14 13 14 83 83 83 83 77 20 77 20 13Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/><rect x="68" y="13" width="15" height="58" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor" transform="matrix(-1 -1.22465e-16 1.22465e-16 -1 151 84)"/><rect x="47" y="33" width="15" height="38" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor" transform="matrix(-1 -1.22465e-16 1.22465e-16 -1 109 104)"/><rect x="26" y="51" width="15" height="20" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor" transform="matrix(-1 -1.22465e-16 1.22465e-16 -1 67 122)"/><path d="M58 26.74 58 13 44.26 13 49.72 18.46 25.59 42.59 28.41 45.41 52.54 21.29 58 26.74Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/></svg></div><strong>PLR</strong></div>
+            <div class="mini"><div class="ico"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><rect x="42" y="7" width="12" height="44" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/><path d="M69.8 19.9 62.9 29.7C69.6 34.4 74 42.2 74 51 74 65.3 62.3 77 48 77 33.7 77 22 65.3 22 51 22 42.2 26.4 34.4 33.1 29.7L26.2 19.9C16.4 26.7 10 38.1 10 51 10 72 27 89 48 89 69 89 86 72 86 51 86 38.1 79.6 26.7 69.8 19.9Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/></svg></div><strong>Day off</strong>no mês do seu aniversário</div>
+            <div class="mini"><div class="ico"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><path d="M85.39 36.7C83.6516 32.6081 78.9251 30.7002 74.8332 32.4386 71.5042 33.853 69.5272 37.314 70 40.9L59.26 45.39C57.3908 42.0975 54.128 39.8316 50.39 39.23L50.39 27.7C54.668 26.5954 57.2405 22.232 56.136 17.954 55.0314 13.6761 50.668 11.1035 46.39 12.2081 42.112 13.3126 39.5395 17.6761 40.644 21.954 41.3716 24.7719 43.5721 26.9724 46.39 27.7L46.39 39.22C42.6836 39.8199 39.4442 42.0566 37.57 45.31L26.79 40.8C27.6355 36.2666 24.6459 31.9061 20.1125 31.0606 15.579 30.2151 11.2186 33.2048 10.3731 37.7382 9.52758 42.2716 12.5172 46.632 17.0506 47.4775 20.0743 48.0415 23.1631 46.8974 25.09 44.5L36.14 49C35.4153 52.5003 36.2313 56.1433 38.38 59L29.79 67.7C25.9898 65.4462 21.0821 66.6998 18.8282 70.5 16.5744 74.3002 17.828 79.2079 21.6282 81.4618 25.4285 83.7156 30.3362 82.462 32.59 78.6618 34.0822 76.1458 34.0822 73.016 32.59 70.5L41.27 61.82C45.5509 64.7938 51.2291 64.7938 55.51 61.82L64.19 70.5C62.3547 73.6677 62.8446 77.6687 65.39 80.3 68.4941 83.4442 73.5593 83.4767 76.7035 80.3726 79.8477 77.2686 79.8802 72.2034 76.7761 69.0592 74.1937 66.4433 70.161 65.9239 67 67.8L58.36 59.07C60.0022 56.907 60.8908 54.2657 60.89 51.55 60.8914 50.734 60.811 49.9199 60.65 49.12L71.65 44.6C73.8317 47.4972 77.6896 48.5643 81.05 47.2 85.108 45.4593 87.0348 40.7978 85.39 36.7ZM48.45 44C50.383 44 51.95 45.567 51.95 47.5 51.95 49.433 50.383 51 48.45 51 46.517 51 44.95 49.433 44.95 47.5 44.95 45.567 46.517 44 48.45 44ZM55.45 58 41.45 58 41.45 55.28C41.4633 54.7324 41.7199 54.2192 42.15 53.88 43.1878 53.1346 44.3441 52.57 45.57 52.21 46.5102 51.9401 47.4819 51.7955 48.46 51.78 49.439 51.7829 50.4125 51.9278 51.35 52.21 52.5903 52.5321 53.7533 53.1 54.77 53.88 55.2001 54.2192 55.4567 54.7324 55.47 55.28Z" class="MsftOfcThm_Background1_Fill_v2" fill="currentColor"/></svg></div><strong>Trabalho híbrido</strong>ou remoto!</div>
+            <div class="mini" style="grid-column: span 2;"><div class="ico"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><circle cx="48" cy="23" r="8.5" fill="currentColor"/><rect x="39.5" y="40" width="17" height="46" rx="8.5" fill="currentColor"/></svg></div><strong>Integra</strong>Auxílio médico, coaching nutricional, coaching esportivo e Mamãe Enger.</div>
           </div>
 
           <div class="assinatura">
